@@ -46,7 +46,8 @@
     <a href="#intro">Introduction</a>
     <a href="#webdev">Mobile Web Development</a>
     <a href="#python">Python Programming</a>
-    <a href="#code">Code Example</a>
+    <a href="#dataanalytics">Data Analytics</a>
+    <a href="#qna">Q & A</a>
   </nav>
 
   <main>
@@ -57,67 +58,142 @@
     <p><a href="https://joviljt.github.io/workshop/" target="_blank">https://joviljt.github.io/workshop/</a></p>
     <img src="url_workshop.png" alt="Workshop URL QR" style="display:block;margin-bottom:16px;max-width:180px;width:100%;" />
 
-    <h2 id="webdev">Mobile Web Development (25 min)</h2>
-    <p>Build a simple mobile-friendly website</p>
+    <h2 id="webdev">Mobile Web Development (30 min)</h2>
+    <p>Build a simple website</p>
     <a href="https://codepen.io/jovi-the-sasster/pen/WbQwopQ" target="_blank">Online Compiler</a>
 
-    <h2 id="python">Python Programming (25 min)</h2>
-    <p>Understand simple Python syntax and logic</p>
-
-    <h2 id="flask_code">Python Code Example</h2>
-<pre><code class="language-python">
-from flask import Flask, render_template_string, request
-
-app = Flask(__name__)
-
-# Embedded HTML with Bootstrap (mobile-first design)
-HTML_TEMPLATE = """
-&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-  &lt;title&gt;Simple Mobile Flask&lt;/title&gt;
-  &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-&lt;/head&gt;
-&lt;body class=&quot;bg-light&quot;&gt;
-  &lt;div class=&quot;container py-4&quot;&gt;
-    &lt;h1 class=&quot;mb-4&quot;&gt;👋 Hello from Flask (Mobile Web)&lt;/h1&gt;
-
-    &lt;form method=&quot;post&quot; class=&quot;mb-3&quot;&gt;
-      &lt;label for=&quot;name&quot; class=&quot;form-label&quot;&gt;Your Name:&lt;/label&gt;
-      &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; class=&quot;form-control&quot; placeholder=&quot;Enter your name&quot; required&gt;
-      &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary mt-3&quot;&gt;Submit&lt;/button&gt;
-    &lt;/form&gt;
-
-    {% raw %}{% if name %}{% endraw %}
-      &lt;div class=&quot;alert alert-success&quot;&gt;Hi, &lt;strong&gt;{{ name }}&lt;/strong&gt;! Welcome to Flask 😊&lt;/div&gt;
-    {% raw %}{% endif %}{% endraw %}
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-"""
-
-@app.route("/", methods=["GET", "POST"])
-def index():
-    name = request.form.get("name") if request.method == "POST" else None
-    return render_template_string(HTML_TEMPLATE, name=name)
-
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
-</code></pre>
-
-    <h2 id="code">Code Example</h2>
-    <pre><code class="language-python">
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return 'Hello, mobile web!'
-
-app.run(debug=True)
+    <h2 id="webdev">What is HTML ?</h2>
+    <p>HTML stands for Hyper Text Markup Language</p>
+    <p>HTML is the standard markup language for creating Web pages</p>
+    <p>HTML describes the structure of a Web page</p>
+    <p>HTML elements tell the browser how to display the content</p>
+    <h3 id="code">HTML Code Example</h3>
+    <pre><code class="language-html">
+&lt;h1&gt;This is a Heading 1&lt;/h1&gt;
+&lt;h2&gt;This is a Heading 2&lt;/h2&gt;
+&lt;h3&gt;This is a Heading 3&lt;/h3&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
     </code></pre>
+    <p>An HTML element is defined by a start tag, some content, and an end tag</p>
+
+    <h2 id="webdev">What is CSS ?</h2>
+    <p>CSS stands for Cascading Style Sheets</p>
+    <p>CSS describes how HTML elements are to be displayed on screen, paper, or in other media</p>
+    <p>The selector points to the HTML element you want to style.</p>
+    <p>The declaration block contains one or more declarations separated by semicolons.</p>
+    <p>Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</p>
+
+    <h3 id="webdev">CSS Code Example</h3>
+    <pre><code class="language-html">
+body {
+  background-color: lightblue;
+}
+
+h1{
+  color: white;
+  text-align: center;
+}
+
+p{
+  font-family: verdana;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+    </code></pre>
+    <p>body/h1/p is a selector in CSS (it points to the HTML element you want to style:).</p>
+    <p>color is a property, and lightblue/white is the property value</p>
+    <p>text-align is a property, and center is the property value</p>
+
+    <h2 id="python">Python Programming (30 min)</h2>
+    <p>Understand simple Python syntax and logic</p>
+    <a href="https://www.w3schools.com/python/trypython.asp?filename=demo_default" target="_blank">Python Online Compiler</a>
+
+    <h2 id="python">What is Python ?</h2>
+    <p>Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.</p>
+    <p>It is used for:</p>
+    <p>web development (server-side), software development, mathematics, system scripting, machine learning and etc....</p>
+    <p>Python was designed for readability, and has some similarities to the English language with influence from mathematics.</p>
+    <p>Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses.</p>
+    <p>Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose.</p>
+
+    <h2 id="code">Python Code Example</h2>
+    <pre><code class="language-python">
+print("Hello, World!")
+    </code></pre>
+
+    <pre><code class="language-python">
+a = 10
+b = 5
+addition = a + b
+subtraction = a - b
+multiplication = a * b
+division = a / b
+print("The addition of a and b is",addition)
+print("The deduction of a and b is",subtraction)
+print("The multiple of a and b is",multiplication)
+print("The divide of a and b is",division)
+    </code></pre>
+    <p>The code above shows the basic arithmetic operations in Python. Let's walk through the code step by step:</p>
+    <p>A variable is created the moment you first assign a value to it.</p>
+    <p>a = 10, Creates a variable a and assigns it the value 10.</p>
+    <p>b = 5, Creates b variable a and assigns it the value 5.</p>
+    <p>addition = a + b, This line adds the values stored in a and b, which are 10 and 5.</p>
+    <p>The result of a + b is 15 will assigned to a new variable called addition.</p>
+
+  
+    <h2 id="dataanalytics">Simple Data Analytics (15 min)</h2>
+    <pre><code class="language-python">
+from datetime import datetime
+import pandas as pd
+
+# Sample data as a list of dictionaries
+data = [
+    {"Date": "2025-07-01", "Product": "Product A", "Revenue": 200},
+    {"Date": "2025-07-01", "Product": "Product B", "Revenue": 150},
+    {"Date": "2025-07-02", "Product": "Product A", "Revenue": 300},
+    {"Date": "2025-07-02", "Product": "Product B", "Revenue": 250},
+    {"Date": "2025-07-03", "Product": "Product A", "Revenue": 100},
+    {"Date": "2025-07-03", "Product": "Product B", "Revenue": 400},
+]
+
+# Convert list to DataFrame
+df = pd.DataFrame(data)
+df['Date'] = pd.to_datetime(df['Date'])
+
+# Show first few rows
+print("📌 Preview of Data:")
+print(df.head())
+
+# Summary statistics
+print("\n📊 Summary Statistics:")
+print(df.describe())
+
+# Total revenue overall
+total_revenue = df['Revenue'].sum()
+print(f"\n💰 Total Revenue: {total_revenue}")
+
+# Total revenue by product
+revenue_by_product = df.groupby('Product')['Revenue'].sum()
+print("\n💼 Revenue by Product:")
+print(revenue_by_product)
+
+# Average revenue per day
+average_daily_revenue = df.groupby('Date')['Revenue'].sum().mean()
+print(f"\n📅 Average Daily Revenue: {average_daily_revenue:.2f}")
+
+# Best-selling product
+best_product = revenue_by_product.idxmax()
+print(f"\n🏆 Best-Selling Product: {best_product}")
+
+# Days with revenue > 500
+high_revenue_days = df.groupby('Date')['Revenue'].sum()
+print("\n🚀 High Revenue Days (>500):")
+print(high_revenue_days[high_revenue_days > 500])
+    </code></pre>
+  <p>This Python code performs basic data analytics using a list of dictionaries to simulate sales data. It uses the Pandas library to convert the list into a DataFrame, converts date strings to datetime objects, and prints a preview of the dataset. It then calculates summary statistics such as total revenue, average daily revenue, and total revenue by product. The code also identifies the best-selling product and filters out the days where total revenue exceeds 500. This approach allows for quick insights from simple in-memory data without needing a CSV file or database.</p>
+
+  <h2 id="qna">Q & A (5 min)</h2>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
